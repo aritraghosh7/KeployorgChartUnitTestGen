@@ -1,0 +1,14 @@
+task: generate_unit_tests
+language: cpp
+test_framework: gtest
+style_guide: google
+constraints:
+  - Only test public functions
+  - Avoid any external web frameworks
+  - Follow AAA (Arrange, Act, Assert) pattern
+  - Include necessary headers
+  - Avoid duplicate tests
+  - Use descriptive test case names
+output:
+  folder: test_gen/output
+  filename_suffix: _test.cc

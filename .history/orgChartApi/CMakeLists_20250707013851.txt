@@ -1,0 +1,39 @@
+cmake_minimum_required(VERSION 3.10)
+project(org_chart CXX)
+
+# Set language and standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Main executable
+add_executable(org_chart
+    clean_src/main.cc
+    clean_src/math_utils.cc
+)
+
+target_include_directories(org_chart PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/clean_src
+)
+
+# GoogleTest
+add_subdirectory(../googletest build_gtest EXCLUDE_FROM_ALL)
+
+# Unit test executable
+add_executable(math_utils_test
+    test_gen/output/math_utils_test.cc
+    clean_src/math_utils.cc
+)
+
+target_include_directories(math_utils_test PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/clean_src
+    ../googletest/googletest/include
+)
+
+target_link_libraries(math_utils_test
+    gtest
+    gtest_main
+)
+
+enable_testing()
+add_test(NAME math_utils_test COMMAND math_utils_test)

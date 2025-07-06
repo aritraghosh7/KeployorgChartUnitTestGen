@@ -1,0 +1,27 @@
+You are an expert AI C++ unit test generator.
+
+Based on the following file content, generate unit tests using Google Test as per the instruction.yaml provided.
+
+---BEGIN FILE---
+Header File: math_utils.h
+
+#include <iostream>
+
+int add(int a, int b);
+int multiply(int a, int b);
+
+Source File: math_utils.cc
+
+#include "math_utils.h"
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+---END FILE---
+
+Instructions:
+Refer to test_gen/instruction.yaml for test output structure and constraints.
