@@ -17,9 +17,6 @@ orgChartUnitTestGen/
 ├── googletest/        # GoogleTest source (manually cloned or submodule)
 │ └── build/           # GTest build files
 └── README.md          # Project documentation
-
-
-
 </pre>
 ---
 ## ⚙️ Prerequisites
